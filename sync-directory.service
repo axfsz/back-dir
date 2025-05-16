@@ -1,0 +1,13 @@
+[Unit]
+Description=目录同步服务
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash /data/sync_directory.sh
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
